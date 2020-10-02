@@ -37,8 +37,7 @@ struct CRDTLWWElementSet<Element: Hashable> {
 
     // MARK: - Write
 
-    // Custom timestamp is purely for testing purposes. Isn't supposed to be used in production. It would be possible to make it nicer and separate
-    // model for testing and "production", but for this demonstration it's sufficent.
+    // Custom timestamp is purely for testing purposes.
 
     mutating func addElement(_ element: Element, customTimestamp: Date = Date()) {
         if let recentAddTimestamp = lookupTimestampForElement(element), recentAddTimestamp >= Date() {
